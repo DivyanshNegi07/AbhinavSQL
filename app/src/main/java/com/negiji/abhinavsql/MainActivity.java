@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 String ageTXT = age.getText().toString();
                 String emailTXT = email.getText().toString();
 
-                Boolean checkinsertdata =  DB.insertuserdata(nameTXT, emailTXT, ageTXT,contactTXT );
+                Boolean checkinsertdata =  DB.insertuserdata(nameTXT, contactTXT , ageTXT, emailTXT);
                 if(checkinsertdata==true)
                     Toast.makeText(MainActivity.this,"New Entery Inserted", Toast.LENGTH_SHORT).show();
                 else
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 String ageTXT = age.getText().toString();
                 String emailTXT = email.getText().toString();
 
-                Boolean checkupdatedata =  DB.updateuserdata(nameTXT, emailTXT, ageTXT,contactTXT );
+                Boolean checkupdatedata =  DB.updateuserdata(nameTXT,contactTXT , ageTXT, emailTXT);
                 if(checkupdatedata==true)
                     Toast.makeText(MainActivity.this,"Entery Updated", Toast.LENGTH_SHORT).show();
                 else
@@ -94,9 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 while(res.moveToNext()){
                     buffer.append("Name :"+res.getString(0)+"\n");
-                    buffer.append("Email :"+res.getString(1)+"\n");
-                    buffer.append("Contact :"+res.getString(2)+"\n");
-                    buffer.append("Age :"+res.getString(3)+"\n\n");
+                    buffer.append("Conatct :"+res.getString(1)+"\n");
+                    buffer.append("Age :"+res.getString(2)+"\n");
+                    buffer.append("Email :"+res.getString(3)+"\n\n");
+
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

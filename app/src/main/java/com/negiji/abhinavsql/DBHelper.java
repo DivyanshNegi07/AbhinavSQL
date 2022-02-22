@@ -30,13 +30,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean insertuserdata(String name, String contact, String email, String age) {
+    public Boolean insertuserdata(String name, String contact, String age,String email ) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name", name);
-        contentValues.put("Email", email);
-        contentValues.put("Age", age);
         contentValues.put("Contact", contact);
+        contentValues.put("Age", age);
+        contentValues.put("Email", email);
 
         long result = DB.insert("Userdetails", null, contentValues);
         if (result == -1) {
@@ -48,12 +48,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean updateuserdata(String name, String contact, String email, String age) {
+    public Boolean updateuserdata(String name, String contact, String age ,String email ) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("Email", email);
-        contentValues.put("Age", age);
         contentValues.put("Contact", contact);
+        contentValues.put("Age", age);
+        contentValues.put("Email", email);
+
         Cursor cursor = DB.rawQuery("Select * from userdetails where name = ?", new String[]{name});
         if (cursor.getCount() > 0) {
 
