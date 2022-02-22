@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 while(res.moveToNext()){
                     buffer.append("Name :"+res.getString(0)+"\n");
-                    buffer.append("Conatct :"+res.getString(1)+"\n");
+                    buffer.append("Contact :"+res.getString(1)+"\n");
                     buffer.append("Age :"+res.getString(2)+"\n");
                     buffer.append("Email :"+res.getString(3)+"\n\n");
 
